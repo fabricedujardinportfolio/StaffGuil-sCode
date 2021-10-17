@@ -46,13 +46,13 @@ function template_header($title,$nav_en_cours) {
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto $dNone">
           <li class="nav-item  $active1">
-            <a class="nav-link" href="/">Tous les films <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="/">Tous les Personnels <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item $active">
-            <a class="nav-link" href="http://$server/reservation.php">Toutes les Réservations</a>
+            <a class="nav-link" href="http://$server/addStaff.php">Ajouter un Personnel</a>
           </li>          
           <li class="nav-item $active2">
-            <a class="nav-link" href="http://$server/reservation.add.php"">Ajouter une réservations</a>
+            <a class="nav-link" href="http://$server/planning.php"">Voir le planing de la semaine</a>
           </li>
         </ul>
           <div class="col-6 text-right $dNone">
@@ -76,7 +76,7 @@ function template_footer() {
   $year = date("Y");
   echo <<<EOT
         <footer>
-          <p>©$year Sakila.NC</p>
+          <p>©$year Guillaume.NC</p>
         </footer>
       </body>
   </html>
