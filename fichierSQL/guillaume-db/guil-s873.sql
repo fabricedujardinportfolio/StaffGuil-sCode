@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : lun. 18 oct. 2021 à 11:07
+-- Généré le : lun. 18 oct. 2021 à 13:47
 -- Version du serveur :  8.0.21
 -- Version de PHP : 8.0.3
 
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `staff` (
   `staff_phone` varchar(50) COLLATE utf8mb4_unicode_520_ci NOT NULL,
   `active` int NOT NULL DEFAULT '0',
   PRIMARY KEY (`staff_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 --
 -- Déchargement des données de la table `staff`
@@ -45,7 +45,8 @@ CREATE TABLE IF NOT EXISTS `staff` (
 
 INSERT INTO `staff` (`staff_id`, `staff_name`, `staff_firstName`, `staff_email`, `staff_password`, `staff_phone`, `active`) VALUES
 (1, 'DUJARDIN', 'Fabrice', 'fabricedujardin873@gmail.com', '123456', '72.01.65', 1),
-(2, 'DUJARDIN', 'Guillaume', 'guillaumedujardin873@gmail.com', '123456', '92.13.29', 1);
+(2, 'DUJARDIN', 'Guillaume', 'guillaumedujardin873@gmail.com', '123456', '92.13.29', 1),
+(3, 'fofo', 'fafa', 'fofo@gmail.com', '123456', '11.11.11', 0);
 
 -- --------------------------------------------------------
 
@@ -56,6 +57,7 @@ INSERT INTO `staff` (`staff_id`, `staff_name`, `staff_firstName`, `staff_email`,
 DROP TABLE IF EXISTS `week`;
 CREATE TABLE IF NOT EXISTS `week` (
   `week_id` int NOT NULL AUTO_INCREMENT,
+  `week_semaine` text COLLATE utf8mb4_unicode_520_ci NOT NULL,
   `week_monday_morning` text COLLATE utf8mb4_unicode_520_ci NOT NULL,
   `week_tuesday_morning` text COLLATE utf8mb4_unicode_520_ci NOT NULL,
   `week_wednesday_morning` text COLLATE utf8mb4_unicode_520_ci NOT NULL,
@@ -72,7 +74,14 @@ CREATE TABLE IF NOT EXISTS `week` (
   `week_sunday_afternoon` text COLLATE utf8mb4_unicode_520_ci NOT NULL,
   `staff_id` int NOT NULL,
   PRIMARY KEY (`week_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+--
+-- Déchargement des données de la table `week`
+--
+
+INSERT INTO `week` (`week_id`, `week_semaine`, `week_monday_morning`, `week_tuesday_morning`, `week_wednesday_morning`, `week_thursday_morning`, `week_friday_morning`, `week_saturday_morning`, `week_sunday_morning`, `week_monday_afternoon`, `week_tuesday_afternoon`, `week_wednesday_afternoon`, `week_thursday_afternoon`, `week_friday_afternoon`, `week_saturday_afternoon`, `week_sunday_afternoon`, `staff_id`) VALUES
+(1, '10/01/2021', 'abs', 'abs', 'pre', 'pre', 'pre', 'pre', 'abs', 'abs', 'pre', 'pre', 'pre', 'pre', 'abs', 'abs', 1);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
