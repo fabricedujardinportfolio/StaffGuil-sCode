@@ -17,7 +17,7 @@ class Staff extends Database
     {
         $staffEmail = self::query("SELECT * FROM staff WHERE staff.staff_email='$email'");
         return $staffEmail->fetch();
-    }
+    } 
     //add
     public static function add($staff_name, $staff_firstName, $staff_email, $staff_password, $staff_phone)
     {

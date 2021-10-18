@@ -52,7 +52,7 @@ function template_header($title,$nav_en_cours) {
             <a class="nav-link" href="http://$server/addStaff.php">Ajouter un Personnel</a>
           </li>          
           <li class="nav-item $active2">
-            <a class="nav-link" href="http://$server/planning.php"">Voir le planing de la semaine</a>
+            <a class="nav-link" href="http://$server/planning.php"">Voir le planing de la semaine choisi</a>
           </li>
         </ul>
           <div class="col-6 text-right $dNone">

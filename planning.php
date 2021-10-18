@@ -73,359 +73,45 @@ else :
             <div class="row">
                 <section class="pt-5 mt-3">
                     <div class="container">
+                        <div class="row">
+                            <div class="col-md-4"></div>
+                            <div class="col-md-4">
+                                <div class="frmSearch">
+                                    <label for="search-box">La recherche doit se faire par le début de la semaine jusqu'a le dernier jours exemple :<br><strong>10-01-21/05-01-21</strong> </label>
+                                    <input type="text" id="search-box" class="form-control" placeholder="Recherche format 10-01-21/15-01-21" required autocomplete="off" />
+                                </div>
+                            </div>
+                            <div class="col-md-4"></div>
+                        </div>
+                    </div>
+                    <div class="container">
                         <h1>Le planning de la semaine</h1>
                     </div>
                 </section>
-                <section>
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col">#Semaine n°</th>
-                                <th scope="col">Personell</th>
-                                <th scope="col">Lundi matin</th>
-                                <th scope="col">Lundi midi</th>
-                                <th scope="col">Mardi matin</th>
-                                <th scope="col">Mardi midi</th>
-                                <th scope="col">Mercredi matin</th>
-                                <th scope="col">Mercredi midi</th>
-                                <th scope="col">Jeudi matin</th>
-                                <th scope="col">Jeudi midi</th>
-                                <th scope="col">Vendredi matin</th>
-                                <th scope="col">Vendredi midi</th>
-                                <th scope="col">Samedi matin</th>
-                                <th scope="col">Samedi midi</th>
-                                <th scope="col">Dimanche matin</th>
-                                <th scope="col">Dimanche midi</th>
-                                <th scope="col">Demi journée de présence au travail</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                            $PlanningsCount = count($plannings);
-                            $i = $PlanningsCount;
-                            $countClock = 7;
-                            foreach ($plannings as $planning) {
-                                # Renvoie tous les Personnels.                      
-                            ?>
-                                <tr>
-                                    <th scope="row">
-                                        <?php echo $planning['week_semaine'];?>
-                                    </th>
-                                    <!-- //Le personell -->
-                                    <td>
-                                        <?php $stafName = Staff::read((int)$planning['staff_id']);
-                                        echo $stafName['staff_name'], ' ', $stafName['staff_firstName']; ?>
-                                    </td>
-                                    <!-- //Lundi matin-->
-                                    <?php
-                                    if ($planning['week_monday_morning'] == "abs") {
-                                        # code...
-                                        $countClock = $countClock - 0.5;
-                                    ?>
-                                        <td class="bg-danger">
-                                            <?php echo $planning['week_monday_morning']; ?>
-                                            <?php echo $countClock; ?>
-                                        </td>
-                                    <?php
-                                    } else if ($planning['week_monday_morning'] == "pre") {
-                                        # code..
-                                    ?>
-                                        <td class="bg-success">
-                                            <?php echo $planning['week_monday_morning']; ?>
-                                        </td>
-                                    <?php
-                                    }
-                                    ?>
-                                    <!-- //Lundi midi-->
-                                    <?php
-                                    if ($planning['week_monday_afternoon'] == "abs") {
-                                        # code...
-                                        $countClock = $countClock - 0.5;
-                                    ?>
-                                        <td class="bg-danger">
-                                            <?php echo $planning['week_monday_afternoon']; ?>
-                                            <?php echo $countClock; ?>
-                                        </td>
-                                    <?php
-                                    } else if ($planning['week_monday_afternoon'] == "pre") {
-                                        # code...
-                                        $countClock = $countClock + 0.5;
-                                    ?>
-                                        <td class="bg-success">
-                                            <?php echo $planning['week_monday_afternoon']; ?><?php echo $countClock; ?>
-                                        </td>
-                                    <?php
-                                    }
-                                    ?>
-                                    <!-- //Mardi matin-->
-                                    <?php
-                                    if ($planning['week_tuesday_morning'] == "abs") {
-                                        # code...
-                                        $countClock = $countClock - 0.5;
-                                    ?>
-                                        <td class="bg-danger">
-                                            <?php echo $planning['week_tuesday_morning']; ?>
-                                            <?php echo $countClock; ?>
-                                        </td>
-                                    <?php
-                                    } else if ($planning['week_tuesday_morning'] == "pre") {
-                                        # code...
-                                        $countClock = $countClock + 0.5;
-                                    ?>
-                                        <td class="bg-success">
-                                            <?php echo $planning['week_tuesday_morning']; ?>
-                                            <?php echo $countClock; ?>
-                                        </td>
-                                    <?php
-                                    }
-                                    ?>
-                                    <!-- //Mardi midi-->
-                                    <?php
-                                    if ($planning['week_tuesday_afternoon'] == "abs") {
-                                        # code...
-                                        $countClock = $countClock - 0.5;
-                                    ?>
-                                        <td class="bg-danger">
-                                            <?php echo $planning['week_tuesday_afternoon']; ?>
-                                            <?php echo $countClock; ?>
-                                        </td>
-                                    <?php
-                                    } else if ($planning['week_tuesday_afternoon'] == "pre") {
-                                        # code...
-                                    ?>
-                                        <td class="bg-success">
-                                            <?php echo $planning['week_tuesday_afternoon']; ?>
-                                            <?php echo $countClock; ?>
-                                        </td>
-                                    <?php
-                                    }
-                                    ?>
-                                    <!-- //Mercredi matin-->
-                                    <?php
-                                    if ($planning['week_wednesday_morning'] == "abs") {
-                                        # code...
-                                        $countClock = $countClock - 0.5;
-                                    ?>
-                                        <td class="bg-danger">
-                                            <?php echo $planning['week_wednesday_morning']; ?>
-                                            <?php echo $countClock; ?>
-                                        </td>
-                                    <?php
-                                    } else if ($planning['week_wednesday_morning'] == "pre") {
-                                        # code...
-                                    ?>
-                                        <td class="bg-success">
-                                            <?php echo $planning['week_wednesday_morning']; ?>
-                                            <?php echo $countClock; ?>
-                                        </td>
-                                    <?php
-                                    }
-                                    ?>
-                                    <!-- //Mercredi midi-->
-                                    <?php
-                                    if ($planning['week_wednesday_afternoon'] == "abs") {
-                                        # code...
-                                        $countClock = $countClock - 0.5;
-                                    ?>
-                                        <td class="bg-danger">
-                                            <?php echo $planning['week_wednesday_afternoon']; ?>
-                                            <?php echo $countClock; ?>
-                                        </td>
-                                    <?php
-                                    } else if ($planning['week_wednesday_afternoon'] == "pre") {
-                                        # code...
-                                    ?>
-                                        <td class="bg-success">
-                                            <?php echo $planning['week_wednesday_afternoon']; ?>
-                                            <?php echo $countClock; ?>
-                                        </td>
-                                    <?php
-                                    }
-                                    ?>
-                                    <!-- //Jeudi matin-->
-                                    <?php
-                                    if ($planning['week_thursday_morning'] == "abs") {
-                                        # code...
-                                        $countClock = $countClock - 0.5;
-                                    ?>
-                                        <td class="bg-danger">
-                                            <?php echo $planning['week_thursday_morning']; ?>
-                                            <?php echo $countClock; ?>
-                                        </td>
-                                    <?php
-                                    } else if ($planning['week_thursday_morning'] == "pre") {
-                                        # code...
-                                    ?>
-                                        <td class="bg-success">
-                                            <?php echo $planning['week_thursday_morning']; ?>
-                                            <?php echo $countClock; ?>
-                                        </td>
-                                    <?php
-                                    }
-                                    ?>
-                                    <!-- //Jeudi midi-->
-                                    <?php
-                                    if ($planning['week_thursday_afternoon'] == "abs") {
-                                        # code...
-                                        $countClock = $countClock - 0.5;
-                                    ?>
-                                        <td class="bg-danger">
-                                            <?php echo $planning['week_thursday_afternoon']; ?>
-                                            <?php echo $countClock; ?>
-                                        </td>
-                                    <?php
-                                    } else if ($planning['week_thursday_afternoon'] == "pre") {
-                                        # code...
-                                    ?>
-                                        <td class="bg-success">
-                                            <?php echo $planning['week_thursday_afternoon']; ?>
-                                            <?php echo $countClock; ?>
-                                        </td>
-                                    <?php
-                                    }
-                                    ?>
-                                    <!-- //Vendredi matin-->
-                                    <?php
-                                    if ($planning['week_friday_morning'] == "abs") {
-                                        # code...
-                                        $countClock = $countClock - 0.5;
-                                    ?>
-                                        <td class="bg-danger">
-                                            <?php echo $planning['week_friday_morning']; ?>
-                                            <?php echo $countClock; ?>
-                                        </td>
-                                    <?php
-                                    } else if ($planning['week_friday_morning'] == "pre") {
-                                        # code...
-                                    ?>
-                                        <td class="bg-success">
-                                            <?php echo $planning['week_friday_morning']; ?>
-                                            <?php echo $countClock; ?>
-                                        </td>
-                                    <?php
-                                    }
-                                    ?>
-                                    <!-- //Vendredi midi-->
-                                    <?php
-                                    if ($planning['week_friday_afternoon'] == "abs") {
-                                        # code...
-                                        $countClock = $countClock - 0.5;
-                                    ?>
-                                        <td class="bg-danger">
-                                            <?php echo $planning['week_friday_afternoon']; ?>
-                                            <?php echo $countClock; ?>
-                                        </td>
-                                    <?php
-                                    } else if ($planning['week_friday_afternoon'] == "pre") {
-                                        # code...
-                                    ?>
-                                        <td class="bg-success">
-                                            <?php echo $planning['week_friday_afternoon']; ?>
-                                            <?php echo $countClock; ?>
-                                        </td>
-                                    <?php
-                                    }
-                                    ?>
-                                    <!-- //Samedi matin-->
-                                    <?php
-                                    if ($planning['week_saturday_morning'] == "abs") {
-                                        # code...
-                                        $countClock = $countClock - 0.5;
-                                    ?>
-                                        <td class="bg-danger">
-                                            <?php echo $planning['week_saturday_morning']; ?>
-                                            <?php echo $countClock; ?>
-                                        </td>
-                                    <?php
-                                    } else if ($planning['week_saturday_morning'] == "pre") {
-                                        # code...
-                                    ?>
-                                        <td class="bg-success">
-                                            <?php echo $planning['week_saturday_morning']; ?>
-                                            <?php echo $countClock; ?>
-                                        </td>
-                                    <?php
-                                    }
-                                    ?>
-                                    <!-- //Samedi midi-->
-                                    <?php
-                                    if ($planning['week_saturday_afternoon'] == "abs") {
-                                        # code...
-                                        $countClock = $countClock - 0.5;
-                                    ?>
-                                        <td class="bg-danger">
-                                            <?php echo $planning['week_saturday_afternoon']; ?>
-                                            <?php echo $countClock; ?>
-                                        </td>
-                                    <?php
-                                    } else if ($planning['week_saturday_afternoon'] == "pre") {
-                                        # code...
-                                    ?>
-                                        <td class="bg-success">
-                                            <?php echo $planning['week_saturday_afternoon']; ?>
-                                            <?php echo $countClock; ?>
-                                        </td>
-                                    <?php
-                                    }
-                                    ?>
-                                    <!-- //Dimanche matin-->
-                                    <?php
-                                    if ($planning['week_sunday_morning'] == "abs") {
-                                        # code...
-                                        $countClock = $countClock - 0.5;
-                                    ?>
-                                        <td class="bg-danger">
-                                            <?php echo $planning['week_sunday_morning']; ?>
-                                            <?php echo $countClock; ?>
-                                        </td>
-                                    <?php
-                                    } else if ($planning['week_sunday_morning'] == "pre") {
-                                        # code...
-                                        $countClock = $countClock + 0.5;
-                                    ?>
-                                        <td class="bg-success">
-                                            <?php echo $planning['week_sunday_morning']; ?>
-                                            <?php echo $countClock; ?>
-                                        </td>
-                                    <?php
-                                    }
-                                    ?>
-                                    <!-- //Dimanche midi-->
-                                    <?php
-                                    if ($planning['week_sunday_afternoon'] == "abs") {
-                                        # code...
-                                        $countClock = $countClock - 0.5;
-                                    ?>
-                                        <td class="bg-danger">
-                                            <?php echo $planning['week_sunday_afternoon']; ?>
-                                            <?php echo $countClock; ?>
-                                        </td>
-                                    <?php
-                                    } else if ($planning['week_sunday_afternoon'] == "pre") {
-                                        # code...
-                                    ?>
-                                        <td class="bg-success">
-                                            <?php echo $planning['week_sunday_afternoon']; ?>
-                                            <?php echo $countClock; ?>
-                                        </td>
-                                    <?php
-                                    }
-                                    ?>
-
-                                    <td>
-                                        <?php echo $countClock; ?>
-                                    </td>
-                                </tr>
-                            <?php
-                                $i++;
-                            }
-                            ?>
-                        </tbody>
-                    </table>
-                </section>
+                <section id="suggesstion-box"></section>
             </div>
         </div>
     <?php
     }
     ?>
+    <script>
+        // AJAX call for autocomplete 
+        $(document).ready(function() {
+            $("#search-box").keyup(function() {
+                $.ajax({
+                    type: "POST",
+                    url: "http://localhost:8000/API/ajaxStaffByWeek.php",
+                    data: 'keyword=' + $(this).val(),
+                    beforeSend: function() {
+                        $("#search-box").css("background", "#FFF no-repeat 165px");
+                    },
+                    success: function(data) {
+                        $("#suggesstion-box").show();
+                        $("#suggesstion-box").html(data);
+                        $("#search-box").css("background", "#FFF");
+                    }
+                });
+            });
+        });
+    </script>
 <?php endif;
