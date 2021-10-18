@@ -8,7 +8,6 @@ if (!empty($_POST["keyword"])) {
     $plannings = Week::readBySemaine($key);
     $countNumberPlaningReturn = count($plannings);
     if ($countNumberPlaningReturn == 0) {
-        # code...
 ?>
         <section>
             <table class="table">
@@ -78,7 +77,6 @@ if (!empty($_POST["keyword"])) {
                             <tbody>
                                 <?php
                                 $PlanningsCount = count($plannings);
-                                var_dump($PlanningsCount);
                                 $i = $PlanningsCount;
                                 $countClock = 7;
                                 foreach ($plannings as $planning) {
@@ -126,10 +124,10 @@ if (!empty($_POST["keyword"])) {
                                         <?php
                                         } else if ($planning['week_monday_afternoon'] == "pre") {
                                             # code...
-                                            $countClock = $countClock + 0.5;
                                         ?>
                                             <td class="bg-success">
                                                 <?php echo $planning['week_monday_afternoon']; ?><?php echo $countClock; ?>
+                                                <?php echo $countClock; ?>
                                             </td>
                                         <?php
                                         }
@@ -147,7 +145,6 @@ if (!empty($_POST["keyword"])) {
                                         <?php
                                         } else if ($planning['week_tuesday_morning'] == "pre") {
                                             # code...
-                                            $countClock = $countClock + 0.5;
                                         ?>
                                             <td class="bg-success">
                                                 <?php echo $planning['week_tuesday_morning']; ?>

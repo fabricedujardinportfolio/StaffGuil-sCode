@@ -41,7 +41,7 @@ else :
                     # Renvoie tous les Personnels.                      
                     ?>
                     <tr>
-                        <th scope="row"><?php echo $i-1;?></th>
+                        <th scope="row"><?php echo $i-2;?></th>
                         <td><?php echo $Staff['staff_name'];?></td>
                         <td><?php echo $Staff['staff_firstName'];?></td>
                         <td><?php echo $Staff['staff_email'];?></td>
