@@ -35,23 +35,21 @@ else :
         </thead>
         <tbody>
             <?php
-                foreach ($Staffs as $Staff) {
-                    # Renvoie tous les Personnels.  
                     $StaffsCount = count($Staffs);
                     $i = $StaffsCount;
-                    while ($i<= $StaffsCount) {
+                foreach ($Staffs as $Staff) {
+                    # Renvoie tous les Personnels.                      
                     ?>
                     <tr>
-                        <th scope="row"><?php echo $i;?></th>
+                        <th scope="row"><?php echo $i-1;?></th>
                         <td><?php echo $Staff['staff_name'];?></td>
                         <td><?php echo $Staff['staff_firstName'];?></td>
                         <td><?php echo $Staff['staff_email'];?></td>
                         <td><?php echo $Staff['staff_phone'];?></td>
                     </tr>
                     <?php   
-                        $i++;       
-                    }
-                }
+                $i++; 
+                }                
             ?>
         </tbody>
     </table>

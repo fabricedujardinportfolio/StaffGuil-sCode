@@ -15,7 +15,7 @@ require './classes/Store.php';
 require './classes/Customer.php';
 require './classes/Inventory.php';
 require './classes/Address.php';
-echo template_header('Add Customer', 'rubrique4');
+echo template_header('See the plan of the week', 'rubrique3');
 ?>
 <?php
 if (!isset($_SESSION["loggedIn"]) || $_SESSION["loggedIn"] == false) :
