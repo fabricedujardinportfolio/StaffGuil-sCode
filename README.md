@@ -1,14 +1,11 @@
 # Sakila
-ECF CCI
+Demande Guillaume besoin de planning
 <p>Connection BDD<p>
 <p>Définir la conection BDD<p>
-<p><code>const username = "root";</code><p>
-<p><code>const password = "secret";</code><p>
+<p><code>const username = "à définir";</code><p>
+<p><code>const password = "à définir";</code><p>
 
 <h2>Contrainte</h2>
-<p>Il y a 2 parties que je n'ai pas pu faire. Faute de temps.<p>
-<p>- Le retour d'une réservation<p>
-<p>- Ajouter un client<p>
   
 <h2>Procédure</h2>
 
