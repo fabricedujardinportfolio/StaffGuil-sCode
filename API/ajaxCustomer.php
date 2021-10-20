@@ -12,7 +12,7 @@ if (!empty($_POST["keyword"])) {
             foreach ($querys as $customer) {
             ?>
                 <li onClick="selectCustomer('<?php echo $customer["last_name"]; ?>');selectCustomerid('<?php echo $customer["customer_id"]; ?>');"><?php echo $customer["last_name"]; ?></li>
-            <?php } ?>
+            <?php } ?>staff_firstName
         </ul>
 <?php }
 } ?>

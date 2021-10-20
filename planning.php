@@ -77,7 +77,7 @@ else :
                             <div class="col-md-4"></div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <button type="button" class="btn btn-primary" onclick="location.href='addPlanning.php';">Rajouter un planning</button>                                    
+                                    <button type="button" class="btn btn-primary" onclick="location.href='addPlanning.php';">Rajouter un planning</button>
                                 </div>
                                 <div class="frmSearch">
                                     <label for="search-box">La recherche doit se faire par le début de la semaine jusqu'a le dernier jours exemple :<br><strong>10-01-21/05-01-21</strong> </label>

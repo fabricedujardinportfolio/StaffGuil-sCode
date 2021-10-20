@@ -126,7 +126,7 @@ if (!empty($_POST["keyword"])) {
                                             # code...
                                         ?>
                                             <td class="bg-success">
-                                                <?php echo $planning['week_monday_afternoon']; ?><?php echo $countClock; ?>
+                                                <?php echo $planning['week_monday_afternoon']; ?>
                                                 <?php echo $countClock; ?>
                                             </td>
                                         <?php
@@ -355,7 +355,6 @@ if (!empty($_POST["keyword"])) {
                                         <?php
                                         } else if ($planning['week_sunday_morning'] == "pre") {
                                             # code...
-                                            $countClock = $countClock + 0.5;
                                         ?>
                                             <td class="bg-success">
                                                 <?php echo $planning['week_sunday_morning']; ?>
