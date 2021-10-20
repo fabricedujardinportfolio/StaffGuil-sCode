@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mar. 19 oct. 2021 à 08:42
+-- Généré le : mer. 20 oct. 2021 à 14:29
 -- Version du serveur :  8.0.21
 -- Version de PHP : 8.0.3
 
@@ -74,7 +74,7 @@ CREATE TABLE IF NOT EXISTS `week` (
   `week_sunday_afternoon` text COLLATE utf8mb4_unicode_520_ci NOT NULL,
   `staff_id` int NOT NULL,
   PRIMARY KEY (`week_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 --
 -- Déchargement des données de la table `week`
@@ -84,7 +84,10 @@ INSERT INTO `week` (`week_id`, `week_semaine`, `week_monday_morning`, `week_tues
 (1, '10-01-21/15-01-21', 'pre', 'pre', 'pre', 'pre', 'pre', 'pre', 'abs', 'abs', 'pre', 'pre', 'pre', 'pre', 'abs', 'abs', 1),
 (2, '16-01-21/21-01-21', 'abs', 'abs', 'pre', 'pre', 'pre', 'pre', 'abs', 'abs', 'pre', 'pre', 'pre', 'pre', 'abs', 'abs', 1),
 (3, '16-01-21/21-01-21', 'abs', 'abs', 'pre', 'pre', 'pre', 'pre', 'abs', 'abs', 'pre', 'pre', 'pre', 'pre', 'abs', 'abs', 1),
-(4, '10-01-21/15-01-21', 'abs', 'abs', 'pre', 'pre', 'pre', 'pre', 'abs', 'abs', 'pre', 'pre', 'pre', 'pre', 'abs', 'abs', 2);
+(4, '10-01-21/15-01-21', 'abs', 'abs', 'pre', 'pre', 'pre', 'pre', 'abs', 'abs', 'pre', 'pre', 'pre', 'pre', 'abs', 'abs', 2),
+(5, '18-10-21/24-10-21', 'abs', 'abs', 'abs', 'abs', 'abs', 'abs', 'abs', 'abs', 'abs', 'abs', 'abs', 'abs', 'abs', 'abs', 1),
+(6, '18-10-21/24-10-21', 'pre', 'pre', 'pre', 'pre', 'abs', 'abs', 'abs', 'pre', 'pre', 'abs', 'pre', 'abs', 'abs', 'abs', 2),
+(7, '18-10-21/24-10-21', 'pre', 'pre', 'pre', 'pre', 'pre', 'pre', 'pre', 'pre', 'pre', 'pre', 'pre', 'pre', 'pre', 'pre', 3);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
